@@ -5,22 +5,15 @@
  * @src: string to be completed after src
  * @n:integer parameter to compare index to
  * Return: returns the concatenated string
- */
+ */char *_strncat(char *dest, char *src, int n)
+{ 
+	int index = 0, dest_len = 0;
 
-char *_strncat(char *dest, char *src, int n)
-{
-	int	i;
-	int	j;
+	while (dest[index++])
+		dest_len++;
 
-	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	j = 0;
-	while (src[j] != '\0' && j < n)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
+	for (inded = 0; src[index] && index < n; index++)
+	       dest[dest_len++] = src[index];
+
 	return (dest);
+}	
